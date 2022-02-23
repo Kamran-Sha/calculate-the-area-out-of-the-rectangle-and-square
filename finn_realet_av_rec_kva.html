@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <style>
+        #myDIV {
+          width: 100%;
+          padding: 50px 0;
+          text-align: center;
+          background-color: lightblue;
+          margin-top: 20px;
+          display:none;
+        }
+
+        #myDIV1 {
+          width: 100%;
+          padding: 50px 0;
+          text-align: center;
+          background-color: lightblue;
+          margin-top: 20px;
+          display:none;
+        }
+
+       
+        </style>
+
+</head>
+<body>
+    <div>
+       Rektangel <input type="radio" id="rektagel" name="figur" value="rektangel" onchange="vis()" >
+        
+      </div>
+      
+      <div>
+       Kvadrat <input type="radio" id="kvadrat" name="figur" value="kvadrat" onchange="vis1()">
+      
+      </div>
+
+<div id="myDIV">
+    Tast inn Grunnflate<input  id="Grunnflate" type ="number" ><br>
+	Tast inn HOyde<input id = "hOyde" type = "number"><br>
+
+    <button onclick="myFunction()">Regn ut arealet</button>
+	
+	<p id="utverdi"></p>
+
+    
+</div>
+
+<div id="myDIV1">
+    Tast inn lengde <input id="lengde" type="number"><br>
+    Tast inn lengde <input id="lengde1" type="number"><br>
+
+    <button onclick="myFunction1()"> Regn ut arealet</button>
+
+    <p id= "utverdi1"></p>
+</div>
+
+<script>
+
+function vis() {
+  var x = document.getElementById("myDIV1");
+  if (x.style.display === "block") {
+    x.style.display = "none";
+  } else {
+    x.style.display = "block";
+  }
+}    
+
+    
+function vis1() {
+  var y = document.getElementById("myDIV");
+  if (y.style.display === "block") {
+    y.style.display = "none";
+  } else {
+    y.style.display = "block";
+  }
+}
+
+function myFunction(){
+        var gunn = document.getElementById("Grunnflate").value;
+        var hoo = document.getElementById("hOyde").value;
+
+        var utverdi = document.getElementById("utverdi");
+        
+        utverdi.textContent = "Arealet av trekanten blir: " + gunn*hoo/2;
+
+}
+
+function myFunction1(){
+    var len = document.getElementById("lengde").value;
+    var len1 = document.getElementById("lengde").value;
+
+    var utverdi1 = document.getElementById("utverdi1");
+
+    utverdi1.textContent = "Areaket av Rektangelet blir; " + len*len1;
+
+}
+</script>
+    
+</body>
+</html>
